@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import AnimeList from "./components/AnimeList";
+import Search from "./components/Serach";
+import AnimeDetail from "./components/AnimeDetail";
+
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Search />
+      <Routes>
+        <Route path="animeDetail/:id" element={<AnimeDetail />} />
+        <Route path="/" element={<AnimeList />} />
+      </Routes>
+    </>
   );
 }
 
